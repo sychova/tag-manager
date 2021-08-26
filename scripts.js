@@ -17,17 +17,18 @@
     };
 
     function addTag(tagNames) {
+        let list = document.getElementById("tagList");
         let tagName = tagNames.split(",");
         if (tagName.length == 1) {
             let tagID = generateID(Object.keys(localStorage));
             localStorage.setItem(tagID, tagName);
-            tagListBuilder();
+            list += tagBuilder(tagName, tagID);
         } else {
             for (var i = 0; i < tagName.length; i++) {
                 let tagID = generateID(Object.keys(localStorage));
                 localStorage.setItem(tagID, tagName[i]);
             }
-            tagListBuilder();
+            list += tagBuilder(tagName, tagID);
         }
     }
 
