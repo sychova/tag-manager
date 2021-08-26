@@ -19,13 +19,13 @@
                 <div>
                     <form id="tagForm" method="POST">
                         <input type="text" id="tagName" name="tagName" title="You can add multiple tags by adding a comma." placeholder="Add a tag" required>
-                        <input type="button" value="Add" id="addTag" class="btn">
+                        <input type="submit" value="Add" id="addTag" class="btn">
                     </form>
-                    <!-- <button id="addTag" class="btn">Add</button> -->
                     <div>
                         <h3>Existing tags:</h3>
-                        <div id="tagList" class="tagListContainer">
-                        </div>
+                        <span><input type="checkbox" id="readonly">Readonly</span>
+                    </div>
+                    <div id="tagList" class="tagListContainer">
                     </div>
                 </div>
             </div>

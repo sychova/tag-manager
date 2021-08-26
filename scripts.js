@@ -3,9 +3,34 @@
         let tagNames = document.getElementById("tagName").value;
         if (tagNames.length > 0) {
             addTag(tagNames);
+            document.getElementById("tagName").value = "";
         }
-        document.getElementById("tagName").value = "";
     });
+    document.getElementById("readonly").addEventListener("click", function() {
+        readOnlyMode(this);
+    });
+
+    function readOnlyMode(state) {
+        if (state.checked) {
+            console.log("checked");
+            document.getElementById("tagName").disabled = true;
+            document.getElementById("addTag").disabled = true;
+            let deleteBtns = document.getElementsByClassName("delete");
+            for (i of deleteBtns) {
+                console.log(i);
+                i.setAttribute("hidden", true);
+            }
+        } else {
+            console.log("unchecked");
+            document.getElementById("tagName").disabled = false;
+            document.getElementById("addTag").disabled = false;
+            let deleteBtns = document.getElementsByClassName("delete");
+            for (i of deleteBtns) {
+                console.log(i);
+                i.removeAttribute("hidden");
+            }
+        }
+    }
 
     function generateID(arr) {
         var tagID = Math.floor(Math.random() * 100).toString();
@@ -38,7 +63,7 @@
     }
 
     function tagBuilder(tagName, tagID) {
-        return `<div class="tag"><span>${tagName}</span><a class="delete" tagID="${tagID}">&#10005</a></div>`
+        return `<div class="tag"><span>${tagName} </span><span class="delete" tagID="${tagID}">&#10005</span></div>`
     }
 
     function tagListBuilder() {

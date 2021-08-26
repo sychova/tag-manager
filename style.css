@@ -25,8 +25,11 @@ header {
     border: 2px solid var(--main-grey);
 }
 
-.form_wrapper>div>div {
-    text-align: center;
+.form_wrapper>div>div:first-of-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 input {
@@ -41,13 +44,15 @@ input {
 }
 
 .btn {
+    line-height: 100%;
+    vertical-align: bottom;
     padding: 10px 30px;
     background-color: #ffffff;
     border: 2px solid var(--main-yellow);
     transition: background-color 300ms, color 300ms;
 }
 
-.btn:hover {
+.btn:hover:enabled {
     background-color: var(--main-yellow);
     color: #ffffff;
     cursor: pointer;
