@@ -50,8 +50,10 @@
             tagListBuilder();
         } else {
             for (var i = 0; i < tagName.length; i++) {
-                let tagID = generateID(Object.keys(localStorage));
-                localStorage.setItem(tagID, tagName[i]);
+                if (tagName[i].length > 0) {
+                    let tagID = generateID(Object.keys(localStorage));
+                    localStorage.setItem(tagID, tagName[i]);
+                }
             }
             tagListBuilder();
         }

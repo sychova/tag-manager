@@ -14,10 +14,8 @@ header {
 }
 
 .form_wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    max-width: 400px;
+    margin: auto;
 }
 
 .form_wrapper>div {
@@ -32,6 +30,13 @@ header {
     align-items: center;
 }
 
+#tagForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 input {
     line-height: 300%;
     border-top: none;
@@ -40,7 +45,6 @@ input {
     border-bottom-width: 2px;
     border-bottom-style: solid;
     border-bottom-color: var(--main-grey);
-    margin-right: 15px;
 }
 
 .btn {
@@ -65,6 +69,7 @@ input {
 #tagList {
     height: 300px;
     overflow-y: auto;
+    text-align: center;
 }
 
 .tag {
