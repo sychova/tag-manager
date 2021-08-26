@@ -25,7 +25,7 @@ header {
     border: 2px solid var(--main-grey);
 }
 
-.form_wrapper>div>div {
+.form_wrapper>div:last-child {
     text-align: center;
 }
 
