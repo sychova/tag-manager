@@ -1,12 +1,16 @@
 (function() {
-    document.getElementById("addTag").addEventListener("click", function() {
-        let tagNames = document.getElementById("tagName").value;
-        if (tagNames.length > 0) {
-            addTag(tagNames);
-        }
-    });
+    var init = function() {
+        document.getElementById("addTag").addEventListener("click", function() {
+            let tagNames = document.getElementById("tagName").value;
+            if (tagNames.length > 0) {
+                addTag(tagNames);
+            }
+        });
+        tagListBuilder();
+    }
+    init();
 
-    let generateID = function(arr) {
+    function generateID(arr) {
         var tagID = Math.floor(Math.random() * 100).toString();
         var a = arr.includes(tagID);
         if (a) {
@@ -16,7 +20,7 @@
         }
     };
 
-    let addTag = function(tagNames) {
+    function addTag(tagNames) {
         let tagName = tagNames.split(",");
         if (tagName.length == 1) {
             let tagID = generateID(Object.keys(localStorage));
@@ -31,16 +35,16 @@
         }
     }
 
-    let deleteTag = function(tagID) {
+    function deleteTag(tagID) {
         localStorage.removeItem(tagID);
         tagListBuilder();
     }
 
-    let tagBuilder = function(tagName, tagID) {
+    function tagBuilder(tagName, tagID) {
         return `<div class="tag"><span>${tagName}</span><a class="delete" tagID="${tagID}">&#10005</a></div>`
     }
 
-    let tagListBuilder = function() {
+    function tagListBuilder() {
         let list = document.getElementById("tagList");
         list.innerHTML = "";
         keys = Object.keys(localStorage);
@@ -61,5 +65,4 @@
             list.innerHTML += "No tags available";
         }
     }
-    tagListBuilder();
 }());
