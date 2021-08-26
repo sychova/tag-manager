@@ -1,14 +1,10 @@
 (function() {
-    var init = function() {
-        document.getElementById("addTag").addEventListener("click", function() {
-            let tagNames = document.getElementById("tagName").value;
-            if (tagNames.length > 0) {
-                addTag(tagNames);
-            }
-        });
-        tagListBuilder();
-    }
-    init();
+    document.getElementById("addTag").addEventListener("click", function() {
+        let tagNames = document.getElementById("tagName").value;
+        if (tagNames.length > 0) {
+            addTag(tagNames);
+        }
+    });
 
     function generateID(arr) {
         var tagID = Math.floor(Math.random() * 100).toString();
@@ -65,4 +61,5 @@
             list.innerHTML += "No tags available";
         }
     }
+    tagListBuilder();
 }());
