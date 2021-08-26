@@ -17,7 +17,6 @@
     };
 
     function addTag(tagNames) {
-        let list = document.getElementById("tagList");
         let tagName = tagNames.split(",");
         if (tagName.length == 1) {
             let tagID = generateID(Object.keys(localStorage));
