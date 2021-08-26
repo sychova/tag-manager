@@ -4,6 +4,7 @@
         if (tagNames.length > 0) {
             addTag(tagNames);
         }
+        document.getElementById("tagName").value = "";
     });
 
     function generateID(arr) {
