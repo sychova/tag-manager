@@ -1,0 +1,79 @@
+:root {
+    --main-yellow: #FDC435;
+    --main-grey: #828282;
+    --main-card_bg: #E5E5E5;
+}
+
+header {
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+.form_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.form_wrapper>div {
+    padding: 30px;
+    border: 2px solid var(--main-grey);
+}
+
+.form_wrapper>div>div {
+    text-align: center;
+}
+
+input {
+    line-height: 300%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--main-grey);
+    margin-right: 15px;
+}
+
+.btn {
+    padding: 10px 30px;
+    background-color: #ffffff;
+    border: 2px solid var(--main-yellow);
+    transition: background-color 300ms, color 300ms;
+}
+
+.btn:hover {
+    background-color: var(--main-yellow);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.tagListContainer {
+    border: 2px solid var(--main-grey);
+}
+
+#tagList {
+    height: 300px;
+    overflow-y: auto;
+}
+
+.tag {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--main-yellow);
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+.delete:hover {
+    color: #FF0000;
+    cursor: pointer;
+}
